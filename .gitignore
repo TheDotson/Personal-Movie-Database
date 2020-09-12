@@ -2,6 +2,8 @@
 package-lock.json
 dist/
 .firebase/
+src/helpers/apiKeys.json
+src/helpers/tmdbApi.json
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
