@@ -4,7 +4,7 @@ import './MovieCard.scss';
 class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
-    const moviePoster = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    const moviePoster = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
     return (
       <div className="card">
         <div className="card-title">
