@@ -4,7 +4,6 @@ import authData from '../../../helpers/data/authData';
 import './MovieCard.scss';
 
 class MovieCard extends React.Component {
-
   addToCollection = (e) => {
     e.preventDefault();
     const { movie } = this.props;
@@ -33,8 +32,8 @@ class MovieCard extends React.Component {
           <p className="text-center">{movie.overview}</p>
         </div>
         <div className="card-footer">
-          <i className="fas fa-eye" onClick={this.addToCollection}></i>
-          <i className="fas fa-plus-circle"></i>
+          <i className="fas fa-eye"></i>
+          <i className="fas fa-plus-circle" onClick={this.addToCollection}></i>
         </div>
       </div>
     );
