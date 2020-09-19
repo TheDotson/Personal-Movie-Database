@@ -33,20 +33,39 @@ class CollectionCard extends React.Component {
     const { movie } = this.props;
     const moviePoster = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
     return (
-      <div className="card">
-        <div className="card-title">
-          <h4 className="text-center">{movie.title}</h4>
-        </div>
-        <img className="card-img-top poster-image" src={moviePoster} alt={movie.title}></img>
-        <div className="card-body">
-          <p className="text-center">{movie.overview}</p>
-        </div>
-        <div className="card-footer">
-          <button className="btn btn-warning" onClick={this.updateWatchedEvent}><i className="fas fa-eye"></i></button>
-          <button className="btn btn-danger" onClick={this.deleteMovieEvent}><i className="fas fa-trash-alt"></i></button>
-        </div>
+      <div>
+        {
+          movie.watched ? (
+            <div className="card">
+            <div className="card-title">
+              <h4 className="text-center">{movie.title}</h4>
+            </div>
+            <img className="card-img-top poster-image" src={moviePoster} alt={movie.title}></img>
+            <div className="card-body">
+              <p className="text-center">{movie.overview}</p>
+            </div>
+            <div className="card-footer">
+              <button className="btn btn-secondary"><i className="fas fa-eye"></i></button>
+              <button className="btn btn-danger" onClick={this.deleteMovieEvent}><i className="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+          ) : (
+            <div className="card">
+            <div className="card-title">
+              <h4 className="text-center">{movie.title}</h4>
+            </div>
+            <img className="card-img-top poster-image" src={moviePoster} alt={movie.title}></img>
+            <div className="card-body">
+              <p className="text-center">{movie.overview}</p>
+            </div>
+            <div className="card-footer">
+              <button className="btn btn-warning" onClick={this.updateWatchedEvent}><i className="fas fa-eye"></i></button>
+              <button className="btn btn-danger" onClick={this.deleteMovieEvent}><i className="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+          )
+        }
       </div>
-
     );
   }
 }
