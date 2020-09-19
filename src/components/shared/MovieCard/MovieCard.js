@@ -10,6 +10,7 @@ class MovieCard extends React.Component {
     const newMovie = {
       overview: movie.overview,
       poster_path: movie.poster_path,
+      release_date: movie.release_date,
       title: movie.title,
       uid: authData.getUid(),
       watched: false,
@@ -32,7 +33,6 @@ class MovieCard extends React.Component {
           <p className="text-center">{movie.overview}</p>
         </div>
         <div className="card-footer">
-          <i className="fas fa-eye"></i>
           <i className="fas fa-plus-circle" onClick={this.addToCollection}></i>
         </div>
       </div>
