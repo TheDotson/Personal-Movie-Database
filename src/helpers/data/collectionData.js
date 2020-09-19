@@ -21,4 +21,10 @@ const getCollectionByUid = (uid) => new Promise((resolve, reject) => {
 
 const addMovie = (newMovie) => axios.post(`${baseUrl}/collection.json`, newMovie);
 
-export default { getCollectionByUid, addMovie };
+const deleteMovie = (movieId) => axios.delete(`${baseUrl}/collection/${movieId}.json`);
+
+export default {
+  getCollectionByUid,
+  addMovie,
+  deleteMovie,
+};
