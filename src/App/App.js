@@ -63,7 +63,7 @@ class App extends React.Component {
                   <Home authed={authed} />
                 </Route>
                 <PrivateRoute path="/collection" component={Collection} authed={authed} />
-                <PrivateRoute path="/new" component={New} authed={authed} />
+                <PrivateRoute path="/search" component={New} authed={authed} />
                 <PrivateRoute path="/view/:movieId" component={ViewMovie} authed={authed} />
                 <PublicRoute path="/auth" component={Home} authed={authed} />
                 <Redirect from="*" to="/hello" />

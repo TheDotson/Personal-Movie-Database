@@ -50,7 +50,7 @@ class NavBar extends React.Component {
               <NavLink tag={RRNavLink} to="/collection">Collection</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={RRNavLink} to="/new">New</NavLink>
+              <NavLink tag={RRNavLink} to="/search">Search</NavLink>
             </NavItem>
             <NavItem className="ml-auto">
               <NavLink onClick={this.logoutClickEvent}><i className="fas fa-sign-out-alt"></i>Logout</NavLink>

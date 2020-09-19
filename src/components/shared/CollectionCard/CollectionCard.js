@@ -27,6 +27,8 @@ class CollectionCard extends React.Component {
       title: movie.title,
       uid: movie.uid,
       watched: true,
+      dvd: movie.dvd,
+      bluray: movie.bluray,
     };
     updateMovie(movie.id, updatedMovie);
   }
@@ -43,6 +45,8 @@ class CollectionCard extends React.Component {
       title: movie.title,
       uid: movie.uid,
       watched: false,
+      dvd: movie.dvd,
+      bluray: movie.bluray,
     };
     updateMovie(movie.id, updatedMovie);
   }
@@ -59,6 +63,8 @@ class CollectionCard extends React.Component {
       title: movie.title,
       uid: movie.uid,
       watched: true,
+      dvd: movie.dvd,
+      bluray: movie.bluray,
     };
     updateMovie(movie.id, updatedMovie);
   }
@@ -75,6 +81,8 @@ class CollectionCard extends React.Component {
       title: movie.title,
       uid: movie.uid,
       watched: true,
+      dvd: movie.dvd,
+      bluray: movie.bluray,
     };
     updateMovie(movie.id, updatedMovie);
   }
