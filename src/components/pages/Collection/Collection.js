@@ -27,9 +27,17 @@ class Collection extends React.Component {
       .catch((err) => console.error('Delete movie failed', err));
   }
 
+  updateMovie = (movieId, editedMovie) => {
+    collectionData.updateMovie(movieId, editedMovie)
+      .then(() => {
+        this.getCollection();
+      })
+      .catch((err) => console.error('Update movie failed', err));
+  }
+
   render() {
     const { collection } = this.state;
-    const collectionCards = collection.map((movie) => <CollectionCard key={movie.id} movie={movie} deleteMovie={this.deleteMovie}/>);
+    const collectionCards = collection.map((movie) => <CollectionCard key={movie.id} movie={movie} deleteMovie={this.deleteMovie} updateMovie={this.updateMovie} />);
     return (
       <div className="collection">
         <h1>My Collection</h1>

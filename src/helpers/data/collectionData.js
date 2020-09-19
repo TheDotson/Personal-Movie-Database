@@ -23,8 +23,11 @@ const addMovie = (newMovie) => axios.post(`${baseUrl}/collection.json`, newMovie
 
 const deleteMovie = (movieId) => axios.delete(`${baseUrl}/collection/${movieId}.json`);
 
+const updateMovie = (movieId, editedMovie) => axios.put(`${baseUrl}/collection/${movieId}.json`, editedMovie);
+
 export default {
   getCollectionByUid,
   addMovie,
   deleteMovie,
+  updateMovie,
 };

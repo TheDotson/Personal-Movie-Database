@@ -5,6 +5,7 @@ import './CollectionCard.scss';
 class CollectionCard extends React.Component {
   static propTypes = {
     deleteMovie: PropTypes.func.isRequired,
+    updateMovie: PropTypes.func.isRequired,
   }
 
   deleteMovieEvent = (e) => {
@@ -13,25 +14,93 @@ class CollectionCard extends React.Component {
     deleteMovie(movie.id);
   }
 
+  watchedEvent = (e) => {
+    e.preventDefault();
+    const { movie, updateMovie } = this.props;
+    const updatedMovie = {
+      favorite: false,
+      movieId: movie.movieId,
+      overview: movie.overview,
+      poster_path: movie.poster_path,
+      release_date: movie.release_date,
+      title: movie.title,
+      uid: movie.uid,
+      watched: true,
+    };
+    updateMovie(movie.id, updatedMovie);
+  }
+
+  unwatchEvent = (e) => {
+    e.preventDefault();
+    const { movie, updateMovie } = this.props;
+    const updatedMovie = {
+      favorite: false,
+      movieId: movie.movieId,
+      overview: movie.overview,
+      poster_path: movie.poster_path,
+      release_date: movie.release_date,
+      title: movie.title,
+      uid: movie.uid,
+      watched: false,
+    };
+    updateMovie(movie.id, updatedMovie);
+  }
+
+  favoriteEvent = (e) => {
+    e.preventDefault();
+    const { movie, updateMovie } = this.props;
+    const updatedMovie = {
+      favorite: true,
+      movieId: movie.movieId,
+      overview: movie.overview,
+      poster_path: movie.poster_path,
+      release_date: movie.release_date,
+      title: movie.title,
+      uid: movie.uid,
+      watched: true,
+    };
+    updateMovie(movie.id, updatedMovie);
+  }
+
   render() {
     const { movie } = this.props;
     const moviePoster = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
     return (
-      <div className="card">
-        <div className="card-title">
-          <h4 className="text-center">{movie.title}</h4>
-        </div>
-        <img className="card-img-top poster-image" src={moviePoster} alt={movie.title}></img>
-        <div className="card-body">
-          <p className="text-center">{movie.overview}</p>
-        </div>
-        <div className="card-footer">
-          <i className="fas fa-eye"></i>
-          <i className="fas fa-plus-circle"></i>
-          <button className="btn btn-danger" onClick={this.deleteMovieEvent}><i className="fas fa-trash-alt"></i></button>
-        </div>
+      <div>
+        {
+          movie.watched ? (
+            <div className="card">
+            <div className="card-title">
+              <h4 className="text-center">{movie.title}</h4>
+            </div>
+            <img className="card-img-top poster-image" src={moviePoster} alt={movie.title}></img>
+            <div className="card-body">
+              <p className="text-center">{movie.overview}</p>
+            </div>
+            <div className="card-footer">
+              <button className="btn btn-secondary" onClick={this.unwatchEvent}><i className="fas fa-eye-slash"></i></button>
+              <button className="btn btn-warning" onClick={this.favoriteEvent}><i className="far fa-star"></i></button>
+              <button className="btn btn-danger" onClick={this.deleteMovieEvent}><i className="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+          ) : (
+            <div className="card">
+            <div className="card-title">
+              <h4 className="text-center">{movie.title}</h4>
+            </div>
+            <img className="card-img-top poster-image" src={moviePoster} alt={movie.title}></img>
+            <div className="card-body">
+              <p className="text-center">{movie.overview}</p>
+            </div>
+            <div className="card-footer">
+              <button className="btn btn-warning" onClick={this.watchedEvent}><i className="fas fa-eye"></i></button>
+              <button className="btn btn-warning" onClick={this.favoriteEvent}><i className="far fa-star"></i></button>
+              <button className="btn btn-danger" onClick={this.deleteMovieEvent}><i className="fas fa-trash-alt"></i></button>
+            </div>
+          </div>
+          )
+        }
       </div>
-
     );
   }
 }
