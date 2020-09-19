@@ -79,7 +79,7 @@ class CollectionCard extends React.Component {
             </div>
             <div className="card-footer">
               <button className="btn btn-secondary" onClick={this.unwatchEvent}><i className="fas fa-eye-slash"></i></button>
-              <button className="btn btn-warning" onClick={this.favoriteEvent}><i className="fas fa-star"></i></button>
+              <button className="btn btn-warning" onClick={this.favoriteEvent}><i className="far fa-star"></i></button>
               <button className="btn btn-danger" onClick={this.deleteMovieEvent}><i className="fas fa-trash-alt"></i></button>
             </div>
           </div>
@@ -94,7 +94,7 @@ class CollectionCard extends React.Component {
             </div>
             <div className="card-footer">
               <button className="btn btn-warning" onClick={this.watchedEvent}><i className="fas fa-eye"></i></button>
-              <button className="btn btn-warning" onClick={this.favoriteEvent}><i className="fas fa-star"></i></button>
+              <button className="btn btn-warning" onClick={this.favoriteEvent}><i className="far fa-star"></i></button>
               <button className="btn btn-danger" onClick={this.deleteMovieEvent}><i className="fas fa-trash-alt"></i></button>
             </div>
           </div>
