@@ -18,7 +18,7 @@
     "reactstrap": "^8.5.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "BROWSER='mozilla firefox' react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
