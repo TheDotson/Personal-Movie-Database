@@ -15,6 +15,8 @@ class MovieCard extends React.Component {
       title: movie.title,
       uid: authData.getUid(),
       watched: false,
+      dvd: movie.dvd,
+      bluray: movie.bluray,
     };
     collectionData.addMovie(newMovie)
       .then()

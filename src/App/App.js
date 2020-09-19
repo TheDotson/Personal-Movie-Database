@@ -12,6 +12,7 @@ import Collection from '../components/pages/Collection/Collection';
 import Home from '../components/pages/Home/Home';
 import Navbar from '../components/pages/Navbar/Navbar';
 import New from '../components/pages/New/New';
+import ViewMovie from '../components/pages/ViewMovie/ViewMovie';
 import './App.scss';
 
 fbConnection();
@@ -62,7 +63,8 @@ class App extends React.Component {
                   <Home authed={authed} />
                 </Route>
                 <PrivateRoute path="/collection" component={Collection} authed={authed} />
-                <PrivateRoute path="/new" component={New} authed={authed} />
+                <PrivateRoute path="/search" component={New} authed={authed} />
+                <PrivateRoute path="/view/:movieId" component={ViewMovie} authed={authed} />
                 <PublicRoute path="/auth" component={Home} authed={authed} />
                 <Redirect from="*" to="/hello" />
               </Switch>
