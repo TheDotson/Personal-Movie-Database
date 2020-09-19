@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './CollectionCard.scss';
 
@@ -80,6 +81,7 @@ class CollectionCard extends React.Component {
 
   render() {
     const { movie } = this.props;
+    const viewMovieLink = `/view/${movie.id}`;
     const moviePoster = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
     return (
           <div className="card">
@@ -91,6 +93,7 @@ class CollectionCard extends React.Component {
               <p className="text-center">{movie.overview}</p>
             </div>
             <div className="card-footer">
+              <Link to={viewMovieLink} className="btn btn-primary"><i className="fas fa-list-ul"></i></Link>
               {
                 movie.watched ? (
                   <button className="btn btn-secondary" onClick={this.unwatchEvent}><i className="fas fa-eye-slash"></i></button>
