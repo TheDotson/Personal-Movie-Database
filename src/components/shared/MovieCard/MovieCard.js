@@ -29,14 +29,8 @@ class MovieCard extends React.Component {
     return (
       <div className="card">
         <img className="card-img-top poster-image" src={moviePoster} alt={movie.title}></img>
-        <div className="card-title">
-          <h4 className="text-center mb-0">{movie.title}</h4>
-        </div>
-        <div className="card-body">
-          <p className="text-center overview">{movie.overview}</p>
-        </div>
-        <div className="card-footer">
-          <i className="fas fa-plus-circle" onClick={this.addToCollection}></i>
+        <div className="card-footer collection-button">
+          <button className="btn btn-primary" onClick={this.addToCollection}>Add to Collection</button>
         </div>
       </div>
     );

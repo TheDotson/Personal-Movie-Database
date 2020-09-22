@@ -94,12 +94,6 @@ class CollectionCard extends React.Component {
     return (
           <div className="card">
             <img className="card-img-top poster-image" src={moviePoster} alt={movie.title}></img>
-            <div className="card-title">
-              <h4 className="text-center">{movie.title}</h4>
-            </div>
-            <div className="card-body">
-              <p className="text-center overview">{movie.overview}</p>
-            </div>
             <div className="card-footer">
               <Link to={viewMovieLink} className="btn btn-primary"><i className="fas fa-list-ul"></i></Link>
               {
