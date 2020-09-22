@@ -1,0 +1,13 @@
+@import '../../../styles/variables';
+
+.search-button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}

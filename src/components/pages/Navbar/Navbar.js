@@ -45,21 +45,21 @@ class NavBar extends React.Component {
     const buildNav = () => {
       if (authed) {
         return (
-          <Nav className="ml-auto" navbar>
+          <Nav navbar>
             <NavItem>
               <NavLink tag={RRNavLink} to="/collection">Collection</NavLink>
             </NavItem>
             <NavItem>
               <NavLink tag={RRNavLink} to="/search">Search</NavLink>
             </NavItem>
-            <NavItem className="ml-auto">
+            <NavItem>
               <NavLink onClick={this.logoutClickEvent}><i className="fas fa-sign-out-alt"></i>Logout</NavLink>
             </NavItem>
           </Nav>
         );
       }
-      return <Nav className="ml-auto" navbar>
-              <NavItem className="ml-auto">
+      return <Nav navbar>
+              <NavItem>
                 <NavLink onClick={this.loginClickEvent}><i className="fab fa-google"></i>Login</NavLink>
               </NavItem>
             </Nav>;
@@ -67,7 +67,7 @@ class NavBar extends React.Component {
 
     return (
       <div>
-        <Navbar className="navbar" expand="md">
+        <Navbar dark expand="md">
           <NavbarBrand tag={RRNavLink} to="/home">PMDB</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={isOpen} navbar>

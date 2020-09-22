@@ -1,8 +1,10 @@
+@import '../../../styles//variables';
+
 .card {
   width: 18rem;
   margin: 5px;
-  box-shadow: 3px 3px black;
-  background-color: #F6D342;
+  box-shadow: 3px 3px $black;
+  background-color: $gold;
   color: black;
   img {
     width: 100%;
@@ -22,4 +24,13 @@ h5 {
 
 .card-title {
   text-decoration: underline;
+}
+
+.overview {
+  padding: 0%;
+}
+
+.search-body {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
 }

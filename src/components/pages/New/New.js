@@ -36,9 +36,11 @@ class New extends React.Component {
             placeholder="Enter movie title"
             onChange={this.searchTermEvent}
             />
-          <button className="btn btn-warning my-2 my-sm-0" onClick={this.movieSearch}>Search</button>
+          <button className="btn btn-warning search-button" onClick={this.movieSearch}>Search</button>
         </form>
-        {movieCards}
+        <div className="search-results">
+          {movieCards}
+        </div>
       </div>
     );
   }

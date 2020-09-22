@@ -28,12 +28,12 @@ class MovieCard extends React.Component {
     const moviePoster = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
     return (
       <div className="card">
-        <div className="card-title">
-          <h4 className="text-center">{movie.title}</h4>
-        </div>
         <img className="card-img-top poster-image" src={moviePoster} alt={movie.title}></img>
-        <div className="card-body">
-          <p className="text-center">{movie.overview}</p>
+        <div className="card-title mb-0">
+          <h4 className="text-center mb-0">{movie.title}</h4>
+        </div>
+        <div className="card-body search-body">
+          <p className="text-center overview">{movie.overview}</p>
         </div>
         <div className="card-footer">
           <i className="fas fa-plus-circle" onClick={this.addToCollection}></i>
