@@ -1,0 +1,25 @@
+@import '../../../styles//variables';
+
+.navbar {
+  background-color: $navbar;
+
+}
+
+.navbar-toggler-icon {
+  color: white;
+  background-color: green;
+  outline: white;
+}
+
+.navbar-toggler {
+  color: aliceblue;
+  background-color: aliceblue;
+}
+
+.nav-link {
+  color: $color15;
+}
+
+.navbar-brand {
+  color: $color15;
+}
