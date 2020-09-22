@@ -135,13 +135,14 @@ class ViewMovie extends React.Component {
     return (
       <div className="view-movie">
         <div className="single-movie">
-          <h1>{movie.title}</h1>
           <img className="single-img" src={moviePoster} alt={movie.title}></img>
           <div>
-            <p>Released: {movie.release_date}</p>
-            <p className="overview">{movie.overview}</p>
+            <h1>{movie.title}</h1>
+            <h4 className="details">Released: {movie.release_date}</h4>
+            <h4 className="details">Overview</h4>
+            <p className="overview details">{movie.overview}</p>
           </div>
-          <div className="card-footer text-center">
+          <div className="card-footer text-center format-select">
             <p>Format Owned:</p>
             <div class="form-check">
               <input className="form-check-input" type="checkbox" value="blu-ray" id="bluray-check" checked={movie.bluray} onChange={this.blurayEvent}/>

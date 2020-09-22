@@ -93,13 +93,7 @@ class CollectionCard extends React.Component {
     const moviePoster = `https://image.tmdb.org/t/p/w342${movie.poster_path}`;
     return (
           <div className="card">
-            <div className="card-title">
-              <h4 className="text-center">{movie.title}</h4>
-            </div>
             <img className="card-img-top poster-image" src={moviePoster} alt={movie.title}></img>
-            <div className="card-body">
-              <p className="text-center">{movie.overview}</p>
-            </div>
             <div className="card-footer">
               <Link to={viewMovieLink} className="btn btn-primary"><i className="fas fa-list-ul"></i></Link>
               {

@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'underscore';
 import authData from '../../../helpers/data/authData';
 import collectionData from '../../../helpers/data/collectionData';
 import CollectionCard from '../../shared/CollectionCard/CollectionCard';
@@ -37,11 +38,13 @@ class Collection extends React.Component {
 
   render() {
     const { collection } = this.state;
-    const collectionCards = collection.map((movie) => <CollectionCard key={movie.id} movie={movie} deleteMovie={this.deleteMovie} updateMovie={this.updateMovie} />);
+    const collectionCards = _.sortBy(collection, 'title').map((movie) => <CollectionCard key={movie.id} movie={movie} deleteMovie={this.deleteMovie} updateMovie={this.updateMovie} />);
     return (
-      <div className="collection">
+      <div>
         <h1>My Collection</h1>
-        {collectionCards}
+        <div className="collection">
+          {collectionCards}
+        </div>
       </div>
     );
   }
