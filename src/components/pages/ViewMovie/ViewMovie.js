@@ -136,11 +136,11 @@ class ViewMovie extends React.Component {
       <div className="view-movie">
         <div className="single-movie">
           <img className="single-img" src={moviePoster} alt={movie.title}></img>
-          <div className="details">
+          <div>
             <h1>{movie.title}</h1>
-            <h4>Released: {movie.release_date}</h4>
-            <h4>Overview</h4>
-            <p className="overview">{movie.overview}</p>
+            <h4 className="details">Released: {movie.release_date}</h4>
+            <h4 className="details">Overview</h4>
+            <p className="overview details">{movie.overview}</p>
           </div>
           <div className="card-footer text-center format-select">
             <p>Format Owned:</p>
