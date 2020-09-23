@@ -41,7 +41,7 @@ class Collection extends React.Component {
     const collectionCards = _.sortBy(collection, 'title').map((movie) => <CollectionCard key={movie.id} movie={movie} deleteMovie={this.deleteMovie} updateMovie={this.updateMovie} />);
     return (
       <div>
-        <h1>My Collection</h1>
+        <h1 className="headline">My Collection</h1>
         <div className="collection">
           {collectionCards}
         </div>
