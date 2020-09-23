@@ -27,7 +27,7 @@ class New extends React.Component {
     const movieCards = movies.map((movie) => <MovieCard key={movie.id} movie={movie} />);
     return (
       <div className="new">
-        <h1>Movie Search</h1>
+        <h1 className="headline">Movie Search</h1>
         <form className="col-6 offset-3">
           <input
             className="form-control mr-sm-2"

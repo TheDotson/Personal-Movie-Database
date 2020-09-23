@@ -137,7 +137,7 @@ class ViewMovie extends React.Component {
         <div className="single-movie">
           <img className="single-img" src={moviePoster} alt={movie.title}></img>
           <div>
-            <h1>{movie.title}</h1>
+            <h1 className="headline">{movie.title}</h1>
             <h4 className="details">Released: {movie.release_date}</h4>
             <h4 className="details">Overview</h4>
             <p className="overview details">{movie.overview}</p>
