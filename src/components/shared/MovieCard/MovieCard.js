@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import collectionData from '../../../helpers/data/collectionData';
 import authData from '../../../helpers/data/authData';
 import './MovieCard.scss';
@@ -21,6 +22,7 @@ class MovieCard extends React.Component {
     collectionData.addMovie(newMovie)
       .then()
       .catch((err) => console.error('Add movies failed', err));
+    toast.success(`${movie.title} has been added to your collection.`, { position: toast.POSITION.TOP_CENTER });
   }
 
   render() {

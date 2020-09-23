@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import './CollectionCard.scss';
 
 class CollectionCard extends React.Component {
@@ -13,6 +14,7 @@ class CollectionCard extends React.Component {
     e.preventDefault();
     const { movie, deleteMovie } = this.props;
     deleteMovie(movie.id);
+    toast.error(`${movie.title} has been deleted from your collection.`, { position: toast.POSITION.TOP_CENTER });
   }
 
   watchedEvent = (e) => {
@@ -31,6 +33,7 @@ class CollectionCard extends React.Component {
       bluray: movie.bluray,
     };
     updateMovie(movie.id, updatedMovie);
+    toast.info(`${movie.title} has been marked as watched.`, { position: toast.POSITION.TOP_CENTER });
   }
 
   unwatchEvent = (e) => {
@@ -49,6 +52,7 @@ class CollectionCard extends React.Component {
       bluray: movie.bluray,
     };
     updateMovie(movie.id, updatedMovie);
+    toast.info(`${movie.title} has been marked as unwatched.`, { position: toast.POSITION.TOP_CENTER });
   }
 
   favoriteEvent = (e) => {
@@ -67,6 +71,7 @@ class CollectionCard extends React.Component {
       bluray: movie.bluray,
     };
     updateMovie(movie.id, updatedMovie);
+    toast.info(`${movie.title} has been marked as a favorite.`, { position: toast.POSITION.TOP_CENTER });
   }
 
   removefavoriteEvent = (e) => {
@@ -85,6 +90,7 @@ class CollectionCard extends React.Component {
       bluray: movie.bluray,
     };
     updateMovie(movie.id, updatedMovie);
+    toast.info(`${movie.title} has been removed as a favorite.`, { position: toast.POSITION.TOP_CENTER });
   }
 
   render() {

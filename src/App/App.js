@@ -5,6 +5,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import fbConnection from '../helpers/data/connection';
@@ -13,9 +14,11 @@ import Home from '../components/pages/Home/Home';
 import Navbar from '../components/pages/Navbar/Navbar';
 import New from '../components/pages/New/New';
 import ViewMovie from '../components/pages/ViewMovie/ViewMovie';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.scss';
 
 fbConnection();
+toast.configure();
 
 const PublicRoute = ({ component: Component, authed, ...rest }) => {
   const routeChecker = (props) => (authed === false
