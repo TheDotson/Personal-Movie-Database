@@ -69,7 +69,7 @@ class App extends React.Component {
                 <PrivateRoute path="/search" component={New} authed={authed} />
                 <PrivateRoute path="/view/:movieId" component={ViewMovie} authed={authed} />
                 <PublicRoute path="/auth" component={Home} authed={authed} />
-                <Redirect from="*" to="/home" />
+                <Redirect from="*" to="/home" component={Home} authed={authed} />
               </Switch>
             </div>
           </React.Fragment>
