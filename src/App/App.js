@@ -62,14 +62,12 @@ class App extends React.Component {
             <Navbar authed={authed} />
             <div>
               <Switch>
-                <Route path="/home">
-                  <Home authed={authed} />
-                </Route>
+                <Route path="/home" component={() => <Home authed={authed} />} />
                 <PrivateRoute path="/collection" component={Collection} authed={authed} />
                 <PrivateRoute path="/search" component={New} authed={authed} />
                 <PrivateRoute path="/view/:movieId" component={ViewMovie} authed={authed} />
                 <PublicRoute path="/auth" component={Home} authed={authed} />
-                <Redirect from="*" to="/home" component={Home} authed={authed} />
+                <Redirect from="*" to="/home"/>
               </Switch>
             </div>
           </React.Fragment>
